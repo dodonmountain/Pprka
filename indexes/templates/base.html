@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IKEA</title>
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  {% block css %}{% endblock css %}
+</head>
+
+<body>
+  {% include '_navbar.html' %}
+
+  {% block body %}
+  {% endblock %}
+
+<!-- javascript -->
+<script src="https://kit.fontawesome.com/c596c9d4e2.js"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
