@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% include '_searchbar.html' %}
+  <div class="container mt-3">
+    <div class="row border-bottom">
+      <div class="col-6">
+        <h1>사진</h1>
+      </div>
+      <div class="col-6">
+        <h3>제품명</h3>
+        <p>분류</p>
+        <p>가격 </p><span>/개</span>
+        <p>제품번호:</p>
+        <p>평점</p>
+        <p>제품설명</p>
+        <form action="">
+          <input class="btn btn-lg btn-block btn-primary" type="button" value="구매하기">
+        </form>
+
+        <div class="row mt-3">
+          <div class="col-5">
+            <button type="button" class="btn btn-secondary btn-lg btn-block">위시리스트에 추가</button>
+          </div>
+          <div class="col-2"></div>
+          <div class="col-5">
+            <p>가격</p>
+          </div>
+        </div>
+        
+        <div class="mt-5 mb-4">
+          <div class="row border-top border-bottom">
+            <div class="col-6 mt-3 mb-3 border-right">
+              <p>가까운 매장을 찾아보세요</p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  매장
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">선택</a>
+                  <a class="dropdown-item" href="#">고양</a>
+                  <a class="dropdown-item" href="#">광명</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mt-3 mb-3">
+              <p>온라인 구매 가능</p>
+              <p class="text-danger">실시간 재고량은 장바구니에서 확인해주세요</p>
+            </div>
+          </div>
+        </div>
+        <p>실시간 재고상황이 반영되지 않을 수 있어, 정확한 재고량은 매장에서 확인해주세요.</p>
+
+      </div>
+    </div>
+  </div>
+
+
+{% include '_footer.html' %}
+{% endblock %}
