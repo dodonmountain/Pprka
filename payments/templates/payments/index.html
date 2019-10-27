@@ -1,0 +1,10 @@
+{% extends 'payments/base.html' %}
+{% block head %}
+<title>결제 정보 확인</title>
+{% endblock %}
+{% block body %}
+<form action="{% url 'payments:pay' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="카카오페이 결제하기">
+</form>
+{% endblock %}
