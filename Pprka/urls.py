@@ -5,5 +5,5 @@ from indexes import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('indexes.urls')),
-    path('payments/', include('payments.urls')),
+    # path('payments/', include('payments.urls')),
 ]

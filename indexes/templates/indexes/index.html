@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
-
+{% block css %}
+<style>
+body {
+    height:5766px;
+}
+</style>
+{% endblock css %}
 {% block body %}
 {% include '_searchbar.html' %}
 {% include '_menubar.html' %}
@@ -9,4 +15,6 @@
 </div>
 {% include '_carousel.html' %}
 {% include '_fproduct.html' %}
+
+{% include '_footer.html' %}
 {% endblock %}
