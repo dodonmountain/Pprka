@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'products',
     'indexes',
     # 'payments',
     'accounts',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'likert_field', # 별점 필드
 ]
 
 MIDDLEWARE = [
