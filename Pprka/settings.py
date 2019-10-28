@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'products',
     'indexes',
-    # 'payments',
+    'payments',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,7 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+<<<<<<< HEAD
     'likert_field', # 별점 필드
+=======
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.kakao',
+>>>>>>> 2b0856c75b6438c6a35ced8011ad095cff1e3850
 ]
 
 MIDDLEWARE = [
@@ -136,3 +144,11 @@ MEDIA_URL = '/media/'
 
 # accounts app
 AUTH_USER_MODEL = 'accounts.User'
+
+AUTHENTICATION_BACKENDS = (
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1  # django.contrib.sites -> SITE_ID 부여
+LOGIN_REDIRECT_URL = 'indexes:index'

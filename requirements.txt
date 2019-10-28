@@ -2,7 +2,12 @@ astroid==2.3.2
 certifi==2019.9.11
 chardet==3.0.4
 colorama==0.4.1
+<<<<<<< HEAD
+=======
+defusedxml==0.6.0
+>>>>>>> 2b0856c75b6438c6a35ced8011ad095cff1e3850
 Django==2.2.6
+django-allauth==0.40.0
 django-extensions==2.2.5
 django-likert-field==0.2.0
 djangorestframework==3.10.3
@@ -10,11 +15,17 @@ idna==2.8
 isort==4.3.21
 lazy-object-proxy==1.4.2
 mccabe==0.6.1
+<<<<<<< HEAD
 Pillow==6.2.1
+=======
+oauthlib==3.1.0
+>>>>>>> 2b0856c75b6438c6a35ced8011ad095cff1e3850
 pylint==2.4.3
 python-decouple==3.1
+python3-openid==3.1.0
 pytz==2019.3
 requests==2.22.0
+requests-oauthlib==1.2.0
 six==1.12.0
 sqlparse==0.3.0
 typed-ast==1.4.0
