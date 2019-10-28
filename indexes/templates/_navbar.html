@@ -1,7 +1,44 @@
+<!-- login modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form class="form-signin">
+            <h2 class="form-signin-heading">로그인 창</h2>
+            <label for="inputEmail" class="sr-only">ID(email)</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="이메일 주소를 입력하세요." required autofocus>
+            <label for="inputPassword" class="sr-only">비밀 번호</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호" required>
+            <div class="warning"></div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> 아이디 기억하기
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit">로그인</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+        <button type="button" id="btnJoin" class="btn btn-primary">회원가입</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- nav bar -->
 <nav style="height:45px;width:100vw;font-size:13px;"
     class=" p-3 m-0 navbar navbar-expand bg-white border-bottom d-flex justify-content-lg-between">
     <div class="container ml-1 px-3">
-    <table class="table text-center text-muted align-content-center p-1 m-1">
+        <table class="table text-center text-muted align-content-center p-1 m-1">
             <tr>
                 <td><a class="text-muted" href="#">고객지원</a></td>
                 <td>|</td>
@@ -11,15 +48,16 @@
                 <td>|</td>
                 <td><a class="text-info" href="#">채팅상담</a></td>
             </tr>
-            </table>
+        </table>
     </div>
+    
     <div class="container-fluid text-muted justify-content-sm-center">
         안녕하세요. IKEA Korea 입니다.
     </div>
     <div class="container m-0 pr-3">
         <table class="table text-center text-muted align-content-center p-3 m-3">
             <tr>
-                <td><a class="text-muted" href="#">로그인</a></td>
+                <td><a data-toggle="modal" href="#loginModal">로그인</a></td>
                 <td>|</td>
                 <td><a class="text-muted" href="#">마이페이지</a></td>
                 <td>|</td>

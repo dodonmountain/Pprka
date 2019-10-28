@@ -14,12 +14,12 @@
 <body>
   {% include '_navbar.html' %}
 
-  {% block body %}
-  {% endblock %}
+  {% block body %}{% endblock %}
 
-<!-- javascript -->
-<script src="https://kit.fontawesome.com/c596c9d4e2.js"></script>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <!-- javascript -->
+  <script src="https://kit.fontawesome.com/c596c9d4e2.js"></script>
+  <script src="{% static 'bootstrap/js/jquery-3.0.0.slim.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
 </body>
 
 </html>
