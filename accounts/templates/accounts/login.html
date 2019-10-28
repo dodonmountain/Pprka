@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+
+{% block body %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button typ="submit">확인</button>
+</form>
+<a href="{% provider_login_url "kakao" %}">카카오 로그인</a>
+{% endblock %}
