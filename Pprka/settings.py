@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'indexes',
-    # 'payments',
+    'payments',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
