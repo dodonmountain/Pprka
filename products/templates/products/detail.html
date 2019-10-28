@@ -10,14 +10,15 @@
       <div class="col-6">
         <h3>제품명: {{ product.name }}</h3>
         <p>분류 </p>
-        <p>가격 </p><span>/개</span>
+        <p>가격 : {{ product.price }} </p><span>/개</span>
         <p>제품번호: {{ product.pk }}</p>
         <p>평점 : {{ product.comment_set.Avg }}</p>
         <p>제품설명 {{ product.feature }}</p>
-        <form action="">
-          <input class="btn btn-lg btn-block btn-primary" type="button" value="구매하기">
+        <form action="{% url 'products:basket_create' product.pk %}">
+          <input class="btn btn-lg btn-block btn-primary" type="submit" value="구매하기">
         </form>
-
+        <h2>총 {{ product.basket_users.all.count }} 개 </h2>
+        <a href="{% url 'products:basket' user.pk %}">장바구니 확인하기</a>
         <div class="row mt-3">
           <div class="col-5">
             <button type="button" class="btn btn-secondary btn-lg btn-block">위시리스트에 추가</button>

@@ -7,6 +7,7 @@ from products.choices import *
 
 # Create your models here.
 class Product(models.Model):
+    # 분류는 어떻게 나눠야 하는지 모르겠음.
     name = models.CharField(max_length=400)
     image = models.ImageField()
     # 패키지 정보
@@ -22,6 +23,8 @@ class Product(models.Model):
     safty = models.TextField(blank=True)
     care = models.TextField(blank=True)
     designer = models.CharField(max_length=100)
+    price = models.IntegerField()
+    color = models.CharField(max_length=50)
     #재질 및 환경
     material = models.TextField()
     environment = models.TextField(blank=True)

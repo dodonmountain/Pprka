@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% include '_searchbar.html' %}
+  {% for product in products %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    <br>
+    <a href="{% url 'products:detail' product.pk %}">{{ product.name }}</a>
+  {% endfor %}
+
+{% include '_footer.html' %}
+{% endblock %}

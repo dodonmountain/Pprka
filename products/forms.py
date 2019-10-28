@@ -6,7 +6,7 @@ from likert_field.forms import LikertFormField
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'image', 'package', 'width', 'height', 'length', 'diameter', 'weight', 'feature', 'construction', 'safty', 'care', 'designer', 'material', 'environment', 'document', )
+        fields = ('name', 'image', 'price', 'package', 'width', 'height', 'length', 'diameter', 'weight', 'color', 'feature', 'construction', 'safty', 'care', 'designer', 'material', 'environment', 'document', )
 
 class CommentForm(forms.ModelForm):
     # score = LikertFormField(

@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ProductForm, CommentForm
 from .models import Product, Comment
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 def index(request):
@@ -55,4 +57,22 @@ def comment_create(request, product_pk):
     else:
         return redirect('accounts:login')
 
+@login_required
+def basket_create(request, product_pk):
+    product = get_object_or_404(Product, pk=product_pk)
+    request.user.basket_products.add(product)
+    messages.success(request, '장바구니에 성공적으로 담겼습니다!')
+    return redirect('products:detail', product_pk)
 
+# 
+def basket(request, user_pk):
+    User = get_user_model()
+    user_profile = get_object_or_404(User, pk=user_pk)
+    if request.user == user_profile:
+        products = request.user.basket_products.all()
+        context = {
+            'products': products
+        }
+        return render(request, 'products/basket.html', context)
+    else:
+        return redirect('products:index')
