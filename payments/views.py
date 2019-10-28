@@ -15,7 +15,7 @@ def req(path, query, data={}):
     print('Headers: %s' % headers)
     print('QueryString: %s' % query)
 
-    return requests.post(url, headers=headers, data=data)
+    return requests.post(url, headers=headers, data=data).json()
 
 
 # Create your views here.
@@ -40,12 +40,9 @@ def pay(request):
         'fail_url': 'https://developers.kakao.com/fail',
         'cancel_url': 'https://developers.kakao.com/cancel',
     }
-    resp = req('/v1/payment/ready', '', params)
-    print("response status:\n%d" % resp.status_code)
-    print("response headers:\n%s" % resp.headers)
-    print("response body:\n%s" % resp.text)
+    data = req('/v1/payment/ready', '', params)
 
-    return render(request, 'payments/pay.html')
+    return redirect(data['next_redirect_pc_url'])
 
 
 # 환불 로직
