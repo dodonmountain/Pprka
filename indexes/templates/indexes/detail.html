@@ -2,6 +2,8 @@
 
 {% block body %}
 {% include '_searchbar.html' %}
+{% include '_menubar.html' %}
+
   <div class="container mt-3">
     <div class="row border-bottom">
       <div class="col-6">
@@ -50,12 +52,61 @@
             </div>
           </div>
         </div>
-        <p>실시간 재고상황이 반영되지 않을 수 있어, 정확한 재고량은 매장에서 확인해주세요.</p>
-
+        <p style="font-size: 12px; text-align:center">실시간 재고상황이 반영되지 않을 수 있어, 정확한 재고량은 매장에서 확인해주세요.</p>
       </div>
     </div>
-  </div>
+
+    <div class="m-5">
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#wpvna">제품정보</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#wowlf">재질 및 환경</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#whflq">조립 및 문서</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#vozlwl">패키지 정보</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#tkdvnavud">상품평</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#rhtl">고시정보</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="wpvna">
+          <p>제품정보가 쓰여지겠지요</p>
+        </div>
+        <div class="tab-pane fade" id="wowlf">
+          <p>재질 및 환경 정보</p>
+        </div>
+        <div class="tab-pane fade" id="whflq">
+          <p>조립 및 문서</p>
+        </div>
+        <div class="tab-pane fade" id="vozlwl">
+          <p>패키지 정보</p>
+        </div>
+        <div class="tab-pane fade" id="tkdvna">
+          <p>상품평</p>
+        </div>
+        <div class="tab-pane fade" id="rhtl">
+          <p>고시정보</p>
+        </div>
+      </div>
+
+    </div>
 
 
 {% include '_footer.html' %}
+
+<script>
+
+</script>
+
 {% endblock %}

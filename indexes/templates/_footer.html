@@ -1,69 +1,89 @@
 <style>
-  div>a {
-    display: block;
-    color: black;
-  }
-  .custom-footer {
+.custom-footer {
   position: absolute;
-  top: 5000px;
+  top: 5100px;
   left: 0;
   right: 0;
+}
+.footer_1 a {
+  display:block;
+  color:black;
+  font-weight: bold;
+  font-size:14px;
+  margin-bottom:10px;
+}
+.footer_2 a {
+  display:block;
+  color: #a3a3a3;
+  font-size:12px;
+}
+.footer_2 p {
+  font-weight:bold;
+}
+.data {
+  width: 300px;
+  display:inline-block;
+}
+.right-info {
+  position:absolute;
+  top:24px;
+  right:15px;
 }
 </style>
 
 
 <section class="custom-footer">
   <div class="container">
-    <a href="">IKEA</a>
+    <a href="http://www.ikea.com/kr/en/" style="color: #999; font-weight:bold;">IKEA</a>
   </div>
 
-  <div>
-    <div class="container border-top pt-3 pb-5">
-      <p>전체 카테고리</p>
-      <div class="row">
-        <div class="col">
-          <a href="">거실</a>
-          <a href="">다이닝</a>
-          <a href="">어린이 IKEA</a>
-          <a href="">침실 텍스타일/러그</a>
-          <a href="">거실 조명</a>
-        </div>
-        <div class="col">
-          <a href="">침실</a>
-          <a href="">조리용품</a>
-          <a href="">책상/테이블</a>
-          <a href="">거실 수납</a>
-          <a href="">사무실 조명</a>
-        </div>
-        <div class="col">
-          <a href="">소파/암체어</a>
-          <a href="">식기</a>
-          <a href="">옷장/침실수납</a>
-          <a href="">소형 수납</a>
-          <a href="">사무실 수납</a>
-        </div>
-        <div class="col">
-          <a href="">홈오피스</a>
-          <a href="">텍스타일</a>
-          <a href="">침대</a>
-          <a href="">보조 수납</a>
-          <a href="">야외</a>
-        </div>
-        <div class="col">
-          <a href="">주방</a>
-          <a href="">욕실</a>
-          <a href="">매트릭스</a>
-          <a href="">홈데코</a>
-          <a href="">현관</a>
-        </div>
+
+  <div class="container border-top pt-3 footer_1" style="height:252px">
+    <p style="font-size: 18px; font-weight:bold;">전체 카테고리</p>
+    <div class="row">
+      <div class="col">
+        <a href="">거실</a>
+        <a href="">다이닝</a>
+        <a href="">어린이 IKEA</a>
+        <a href="">침실 텍스타일/러그</a>
+        <a href="">거실 조명</a>
+      </div>
+      <div class="col">
+        <a href="">침실</a>
+        <a href="">조리용품</a>
+        <a href="">책상/테이블</a>
+        <a href="">거실 수납</a>
+        <a href="">사무실 조명</a>
+      </div>
+      <div class="col">
+        <a href="">소파/암체어</a>
+        <a href="">식기</a>
+        <a href="">옷장/침실수납</a>
+        <a href="">소형 수납</a>
+        <a href="">사무실 수납</a>
+      </div>
+      <div class="col">
+        <a href="">홈오피스</a>
+        <a href="">텍스타일</a>
+        <a href="">침대</a>
+        <a href="">보조 수납</a>
+        <a href="">야외</a>
+      </div>
+      <div class="col">
+        <a href="">주방</a>
+        <a href="">욕실</a>
+        <a href="">매트릭스</a>
+        <a href="">홈데코</a>
+        <a href="">현관</a>
       </div>
     </div>
   </div>
 
-  <div style="background-color:rgb(239, 239, 239)">
-    <div class="container pt-5 pb-5">
+
+  <div style="background-color:rgb(239, 239, 239); height:243px;">
+    <div class="container pt-5 pb-5 footer_2">
       <div class="row">
-        <div class="col-2 ">
+        <div class="col-2">
           <p>쇼핑하기</p>
           <a href="">매장에서 쇼핑하기</a>
           <a href="">온라인에서 쇼핑하기</a>
@@ -112,13 +132,22 @@
     </div>
   </div>
 
-  <div style="background-color:rgb(85, 85, 85);height">
-    <div class="container pt-4 pb-4 text-white">
-      <p>IKEA 코리아</p>
-      <p>주소 : (우) 14352 경기도 광명시 일직로 17 IKEA광명점</p>
-      <p>사업자 등록번호 : 106-86-82871 <span> 대표자 : 프레드리크 요한손</span> </p>
-      <p>통신판매업 신고 : 2018-경기광명-0209 <span> TEL : 1670-4532</span></p>
-      <p>© Inter IKEA Systems B.V. 1999 - 2019</p>
+  <div style="background-color:rgb(85, 85, 85); height:158px;">
+    <div class="container pt-4 pb-4 text-white" style="line-height:15px; font-size:12px;position:relative;">
+      <p style="font-weight:bold">IKEA 코리아</p>
+      <span class="data">주소 : (우) 14352 경기도 광명시 일직로 17 IKEA광명점</span><br>
+      <span class="data">사업자 등록번호 : 106-86-82871 
+        <button class="pt-1 pb-1" style="border-radius:5px;">사업자정보확인 ></button>
+      </span>
+      <span class="data"> 대표자 : 프레드리크 요한손</span><br>
+      <span class="data">통신판매업 신고 : 2018-경기광명-0209 </span>
+      <span class="data"> TEL : 1670-4532</span><br>
+      <span class="data mt-2">© Inter IKEA Systems B.V. 1999 - 2019</span>
+    <div class="right-info">
+      <a href="" style="color:white; font-weight:bold;">웹사이트 이용약관</a>
+      <a href="" style="color:white; font-weight:bold;">IKEA Korea 개인정보처리방침</a>
     </div>
+    </div>
+
   </div>
 </section>
