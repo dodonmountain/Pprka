@@ -4,5 +4,5 @@ app_name = 'indexes'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('detail/', views.detail, name='detail')
+    path('detail/', views.detail, name='detail'),
 ]

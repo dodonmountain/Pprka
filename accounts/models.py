@@ -7,7 +7,7 @@ class Product(models.Model):
 
 class User(AbstractUser):
     phone_number = models.CharField(max_length=20)
-    preferenced_mall = models.CharField(max_length=5)
+    preferenced_mall = models.CharField(max_length=5, blank=True)
     wish_lists = models.ManyToManyField(Product, related_name='wish_users')
     REQUIRED_FIELDS = ['phone_number', 'email']
 
