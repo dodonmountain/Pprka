@@ -20,7 +20,7 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = get_user_model()
-        fields = ('last_name', 'first_name', 'phone_number')
+        fields = ('last_name', 'first_name', 'phone_number', 'email')
         labels = {
             'phone_number': '휴대폰'
         }
@@ -31,15 +31,3 @@ class CustomUserChangeForm(UserChangeForm):
                 }
             )
         }
-
-class EmailChangeForm(forms.Form):
-    email = forms.EmailField(
-        label='이메일'
-    )
-    email_again = forms.EmailField(
-        label='이메일 다시 입력'
-    )
-    password = forms.CharField(
-        label='비밀번호',
-        widget=forms.PasswordInput()
-    )

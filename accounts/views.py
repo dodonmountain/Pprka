@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm, CustomUserChangeForm, EmailChangeForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
@@ -64,18 +64,6 @@ def update_password(request):
             return redirect('articles:index')
     else:
         form = PasswordChangeForm(request.user)
-    context = {
-        'form': form
-    }
-    return render(request, 'accounts/form.html', context)
-
-@login_required
-def update_email(request):
-    if request.method == 'POST':
-        form = EmailChangeForm(request.POST)
-        print(form.email)
-    else:
-        form = EmailChangeForm()
     context = {
         'form': form
     }
