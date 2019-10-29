@@ -9,6 +9,7 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=20)
     preferenced_mall = models.CharField(max_length=5, blank=True)
     wish_lists = models.ManyToManyField(Product, related_name='wish_users')
+    email = models.EmailField(unique=True)
     REQUIRED_FIELDS = ['phone_number', 'email']
 
 class OrderHistory(models.Model):

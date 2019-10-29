@@ -10,5 +10,4 @@ urlpatterns = [
     path('logout/', views.logout, name="logout"),
     path('update/', views.update, name="update"),
     path('password/', views.update_password, name="update_password"),
-    # path('email/', views.update_email, name="update_email"),
 ]
