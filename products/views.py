@@ -57,7 +57,6 @@ def comment_create(request, product_pk):
     else:
         return redirect('accounts:login')
 
-@login_required
 def basket_create(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
     request.user.basket_products.add(product)

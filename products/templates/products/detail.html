@@ -18,7 +18,9 @@
           <input class="btn btn-lg btn-block btn-primary" type="submit" value="구매하기">
         </form>
         <h2>총 {{ product.basket_users.all.count }} 개 </h2>
-        <a href="{% url 'products:basket' user.pk %}">장바구니 확인하기</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'products:basket' user.pk %}">장바구니 확인하기</a>
+        {% endif %}
         <div class="row mt-3">
           <div class="col-5">
             <button type="button" class="btn btn-secondary btn-lg btn-block">위시리스트에 추가</button>

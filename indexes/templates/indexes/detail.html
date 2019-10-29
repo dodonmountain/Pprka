@@ -1,10 +1,37 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<style>
+.hover-green:hover {
+  background-color:#178a00 !important;
+}
+.tab-pane p:nth-child(1) {
+  font-weight:bold;
+  font-size:16px;
+}
+.rate-title {
+  float:left;
+  font-size: 13px;
+  font-weight:normal;
+  width:185px;
+}
+/* .rate {
+  margin-left:185px;
+}
+.rate-bar {
+  float:left;
+  height:9px;
+  width:20%;
+  background-color:antiquewhite;
+  border:solid 0.1px;
+  list-style: none;
+} */
+
+</style>
 {% include '_searchbar.html' %}
 {% include '_menubar.html' %}
-
   <div class="container mt-3">
+    <!-- 주문 -->  
     <div class="row border-bottom">
       <div class="col-6">
         <h1>사진</h1>
@@ -55,58 +82,139 @@
         <p style="font-size: 12px; text-align:center">실시간 재고상황이 반영되지 않을 수 있어, 정확한 재고량은 매장에서 확인해주세요.</p>
       </div>
     </div>
-
-    <div class="m-5">
-
-      <ul class="nav nav-tabs">
+    <!-- ~와(과) 함께 많이 본 제품 -->
+    <div>
+      <p>~와(과) 함께 많이 본 제품</p>
+    </div>
+    <!-- 제품 상세정보 -->
+    <div class="mt-5">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#wpvna">제품정보</a>
+          <a class="nav-link active" id="prodInfoTab-tab" data-toggle="tab" href="#prodInfoTab" role="tab" aria-controls="prodInfoTab" aria-selected="false">제품정보</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#wowlf">재질 및 환경</a>
+          <a class="nav-link" id="envAndMatContainer-tab" data-toggle="tab" href="#envAndMatContainer" role="tab" aria-controls="envAndMatContainer" aria-selected="false">재질 및 환경</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#whflq">조립 및 문서</a>
+          <a class="nav-link" id="assAndDocContainer-tab" data-toggle="tab" href="#assAndDocContainer" role="tab" aria-controls="assAndDocContainer" aria-selected="false">조립 및 문서</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#vozlwl">패키지 정보</a>
+          <a class="nav-link" id="packageDetailsContainer-tab" data-toggle="tab" href="#packageDetailsContainer" role="tab" aria-controls="packageDetailsContainer" aria-selected="false">패키지 정보</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#tkdvnavud">상품평</a>
+          <a class="nav-link" id="BVContainer-tab" data-toggle="tab" href="#BVContainer" role="tab" aria-controls="BVContainer" aria-selected="false">상품평</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#rhtl">고시정보</a>
+          <a class="nav-link" id="productInfo2Container-tab" data-toggle="tab" href="#productInfo2Container" role="tab" aria-controls="productInfo2Container" aria-selected="false">고시정보</a>
         </li>
       </ul>
-
-      <div class="tab-content">
-        <div class="tab-pane fade show active" id="wpvna">
-          <p>제품정보가 쓰여지겠지요</p>
+      
+      <div class="tab-content px-3 py-4" id="myTabContent">
+        <div class="tab-pane fade show active" id="prodInfoTab" role="tabpanel" aria-labelledby="prodInfoTab-tab">
+          <p>제품정보</p>
         </div>
-        <div class="tab-pane fade" id="wowlf">
-          <p>재질 및 환경 정보</p>
+        <div class="tab-pane fade" id="envAndMatContainer" role="tabpanel" aria-labelledby="envAndMatContainer-tab">
+          <p>재질 및 환경</p>
         </div>
-        <div class="tab-pane fade" id="whflq">
+        <div class="tab-pane fade" id="assAndDocContainer" role="tabpanel" aria-labelledby="assAndDocContainer-tab">
           <p>조립 및 문서</p>
+          <p style="font-size: 13px; font-weight:bold;">다운로드</p>
+          <p style="font-size: 13px; ">최신 버전의 문서만 다운로드할 수 있습니다. 제품에 포함된 문서와 내용이 다를 수 있습니다.</p>
+          <p style="font-size: 13px; font-weight:bold;">조립설명</p>
+          <div style="font-size:13px;">
+            <div class="px-5 py-1 d-inline-block" style="width:170px; background-color:rgb(232, 232, 232);">
+              000.000.00
+            </div>
+            <div class="px-5 py-1 d-inline-block" style="width:900px; background-color:rgb(246, 246, 246);">
+              <a href="">제품명</a><span>(PDF)</span>
+            </div>
+
+          </div>
         </div>
-        <div class="tab-pane fade" id="vozlwl">
+        <div class="tab-pane fade" id="packageDetailsContainer" role="tabpanel" aria-labelledby="packageDetailsContainer-tab">
           <p>패키지 정보</p>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">제품번호</th>
+                <th scope="col">총 패키지</th>
+                <th scope="col">W(가로)</th>
+                <th scope="col">H(높이)</th>
+                <th scope="col">L(세로)</th>
+                <th scope="col">지름</th>
+                <th scope="col">무게</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>00700</td>
+                <td>1</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="tab-pane fade" id="tkdvna">
-          <p>상품평</p>
+        <div class="tab-pane fade" id="BVContainer" role="tabpanel" aria-labelledby="BVContainer-tab">
+          <div class="d-flex justify-content-between">
+            <p>상품평</p>
+            <button class="hover-green px-5" style="background-color:#005BA7; color:white; border: none; font-size:13px; font-weight:bold"> 상품평 쓰기</button>
+          </div>
+          <!-- 상품평 박스 -->
+          <div class="mt-3 pt-5 px-2 border-top row">
+            <div class="comment_left col-7">username</div>
+            <div class="comment_right col-5" style="line-height: 15px;">
+              <dl>
+                <dt class="rate-title">제품 가성비</dt>
+                <!-- 따라해보려했으나...-->
+                <dd>*****</dd>
+                  <!-- <ul>
+                    <li class="rate-bar"></li>
+                    <li class="rate-bar"></li>
+                    <li class="rate-bar"></li>
+                    <li class="rate-bar"></li>
+                    <li class="rate-bar"></li>
+                  </ul> -->
+                <dt class="rate-title">제품 품질</dt>
+                <dd>*****</dd>
+                <dt class="rate-title">제품 외관</dt>
+                <dd>*****</dd>
+                <dt class="rate-title">조립/설치 편의성</dt>
+                <dd>*****</dd>
+                <dt class="rate-title">제품 기능</dt>
+                <dd>*****</dd>
+              </dl>
+            </div>
+          </div>
+
         </div>
-        <div class="tab-pane fade" id="rhtl">
+        <div class="tab-pane fade" id="productInfo2Container" role="tabpanel" aria-labelledby="productInfo2Container-tab">
           <p>고시정보</p>
         </div>
       </div>
+    <!-- 관련 제품 -->
+    <div class="border-top">
+      <p>관련 제품</p>
+    </div>
+    <!-- 같은 카테고리 다른 물품들 -->
+    <div class="border-top">
+      <p>같은 카테고리 다른 물품들</p>
+    </div>
+
+
+
+
 
     </div>
 
 
 {% include '_footer.html' %}
 
-<script>
-
-</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 {% endblock %}
