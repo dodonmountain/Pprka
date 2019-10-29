@@ -3,6 +3,7 @@ from . import views
 app_name = 'indexes'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.welcome, name='welcome'),
+    path('index/', views.index, name='index'),
     path('detail/', views.detail, name='detail'),
 ]

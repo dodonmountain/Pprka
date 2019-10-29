@@ -1,27 +1,22 @@
-# IKEA 클론 프로젝트
+# HOTEL PAPRIKA
 
-> by 파프리카
+> fully functional  - 🏨 - wep site project
 
 
 
-## Rules
 
-(추가 예정)
 
-## 1주차
+## we gonna do
 
-** ROLES **
+### Week 1
 
-> 마크업 : 김태우, 이경호
->
-> 나머지 모든 일: 염겨레, 양혜진, 이지민
->
-> 마감 기한: 2019-10-29 TUE
+* ERD `0%`
+* Make embed DB (sqlite3)
+* reservation system (test) 
+* payment system (test)
+* neat layouts **!important**
 
-- ~~Git collaborator 설정~~ `Done!`
-- Index.html 마크업 `50%`
-- ~~Detail.html 마크업~~ `Done!`
-- ~~결제 시스템~~ `Done?`
-- 기본 모델링 작업 ` 0%`
-- ERD 그리기 `0%?`
-- 마크업과 로직 연결 작업 ==> 화요일 예정!
+## we've done
+
+* NOTHING YET
+

@@ -1,41 +1,9 @@
 {% extends 'base.html' %}
 {% block css %}
-<style>
-body {
-    height:5766px;
-}
-.place-category {
-  background-image: url(https://uiux.newideas.kr/api/pc/images/main/today-place-bracket-left.svg);
-  position:absolute;
-  display:block;
-  top:0;
-  width:18px;
-  height:50px;
-  background-repeat:no-repeat;
-}
-.event-image {
-    width:340px;
-    height:415px;
-}
-</style>
+
 {% endblock css %}
 {% block body %}
-{% include '_searchbar.html' %}
-{% include '_menubar.html' %}
-<div>
-<h6 class="float-left text-dark ml-5 pl-5">IKEA KOREA NEWS</h6>
-<h6 class="float-right mr-5 pr-5"><a class="text-dark";href="#">더보기></a></h6>
-</div>
-{% include '_carousel.html' %}
-{% include '_fproduct.html' %}
-{% include '_place-today.html' %}
-{% include '_newevent.html' %}
-<div style="content:url(https://s3.newideas.kr/api/pc/ko/ABTYPEBANNER/VÄRMER-ko.jpg);margin:auto;"></div>
-{% include '_homefurnishing.html' %}
-<br>
-<div class="container-fluid" style="content:url(https://s3.newideas.kr/api/pc/ko/ABTYPEBANNER/overstock-10-1-pc-ko.png);"></div>
-{% include '_curation-list.html' %}
-{% include '_info.html' %}
-{% include '_footer.html' %}
+{% load static %}
+
 
 {% endblock %}

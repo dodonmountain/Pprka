@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<style>
+.welcome-bg {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index:-1;
+}
+.welcome-curtain {
+    background-color: white;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    animation-duration: 1.5s;
+}
+.welcome-font {
+    font-family: 'Satisfy', cursive;
+    font-size: 12rem;
+    animation-duration: 2.5s;
+    animation-delay: 1s;
+}
+body {
+    background-color:black;
+}
+</style>
+{% endblock css %}
+{% block body %}
+{% load static %}
+<div class="welcome-curtain animated fadeOut"></div>
+<div class="container-fluid m-0 p-0 text-center">
+<h1 class="welcome-font text-white fixed-top mt-5 animated fadeIn">
+Paprika
+</h1>
+<h2>SOMEPLACE NEW</h2>
+<h2 class="text-muted">HOTEL</h2>
+<img class=".welcome-bg"src="{% static 'img/city.jpg' %}">
+</div>
+<div class="container text-white">
+<h2>
+<a href="">Enter</a>
+</h2>
+</div>
+{% endblock %}
