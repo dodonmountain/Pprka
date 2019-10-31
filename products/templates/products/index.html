@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block body %}
-{% include '_searchbar.html' %}
-  <a href="{% url 'products:create' %}">
-      <button>제품 등록</button>
+  <br>
+  <a href="{% url 'reservations:index' %}">
+      <button>Reservation</button>
   </a>
   <hr>
   {% for product in products %}
@@ -11,6 +11,4 @@
     <br>
     <a href="{% url 'products:detail' product.pk %}">{{ product.name }}</a>
   {% endfor %}
-
-{% include '_footer.html' %}
 {% endblock %}

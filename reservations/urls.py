@@ -4,6 +4,6 @@ from . import views
 app_name = 'reservations'
 
 urlpatterns = [
-    path('', view.index, name='index'),
-    
+    path('', views.index, name='index'),
+
 ]
