@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 import requests
 from decouple import config
+from .models import Payment
 
 
 KEY = config('KAKAO_API_KEY')
@@ -34,6 +35,7 @@ def pay(request):
         'partner_order_id': '19283432',
         'partner_user_id': '4211',
         'item_name': 'Paprika Hotel Single Room',
+        'item_code': 'a123',
         'quantity': 1,
         'total_amount': 323900,
         'vat_amount': 32390,
@@ -63,9 +65,14 @@ def success(request):
     print(params)
     data = req('/v1/payment/approve', '', params)
 
+    payment = Payment(aid=data['aid'], tid=data['tid'], payment_method_type=data['payment_method_type'],
+                item_name=data['item_name'], item_code=['item_code'], amount=data['amount']['total'],
+                created_at=data['created_at'], approved_at=data['approved_at'])
+    payment.save()
+
     context = {
-        'item_name': data['item_name'],
-        'amount': data['amount']['total'],
+        'item_name': payment.item_name,
+        'amount': payment.amount,
     }
 
     return render(request, 'payments/success.html', context)
