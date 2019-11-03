@@ -1,50 +1,65 @@
-.navbox {
-    background-image: url("palmhotel.jpg");
-    height: 78vh;
+
+
+@media (min-width: 992px) {
+    .oneliner {
+        font-size: 4rem;
+        color: #fafafa;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: rgba(0, 0, 0, 0.3);
+        max-width: fit-content;
+    }
+    .navbox {
+        background-image: url("palmhotel.jpg");
+        height: 78vh;
+    }
+}
+@media (max-width: 992px) {
+    .oneliner {
+        font-size: 0;
+    }
+    .navbox {
+        background-color: darkkhaki;
+    }
 }
 
-.oneliner {
-    font-size: 4rem;
-    color: #fafafa;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgba(0,0,0,0.3);
-    max-width: fit-content;
-    
-}
 
-.search-sec{
+.search-sec {
     padding: 1rem;
 }
-.search-slt{
+
+.search-slt {
     display: block;
     width: 100%;
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     color: #55595c;
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
     height: calc(3rem + 2px) !important;
-    border-radius:0;
+    border-radius: 0;
+    text-align: center;
 }
-.wrn-btn{
+
+.wrn-btn {
     width: 100%;
-    font-size: 16px;
+    font-size: 1.2rem;
     font-weight: 400;
     text-transform: capitalize;
     height: calc(3rem + 2px) !important;
-    border-radius:0;
+    border-radius: 0;
 }
-@media (min-width: 992px){
-    .search-sec{
+
+@media (min-width: 992px) {
+    .search-sec {
         position: relative;
         top: -120px;
-        background: rgba(26, 70, 104, 0.51);
+        background: rgba(35, 35, 35, 0.51);
     }
 }
 
-@media (max-width: 992px){
-    .search-sec{
+@media (max-width: 992px) {
+    .search-sec {
         background: #1A4668;
         top: -120px;
     }
