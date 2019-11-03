@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% include '_searchbar.html' %}
+  <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">확인</button>
+  </form>
+
+{% include '_footer.html' %}
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% include '_searchbar.html' %}
+  <div class="container mt-3">
+    <div class="row border-bottom">
+      <div class="col-6">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+      </div>
+      <div class="col-6">
+        <h3>제품명: {{ product.name }}</h3>
+        <p>분류 </p>
+        <p>가격 : {{ product.price }} </p><span>/개</span>
+        <p>제품번호: {{ product.pk }}</p>
+        <p>평점 : {{ product.comment_set.Avg }}</p>
+        <p>제품설명 {{ product.feature }}</p>
+        <form action="{% url 'products:basket_create' product.pk %}">
+          <input class="btn btn-lg btn-block btn-primary" type="submit" value="구매하기">
+        </form>
+        <h2>총 {{ product.basket_users.all.count }} 개 </h2>
+        {% if user.is_authenticated %}
+          <a href="{% url 'products:basket' user.pk %}">장바구니 확인하기</a>
+        {% endif %}
+        <div class="row mt-3">
+          <div class="col-5">
+            <button type="button" class="btn btn-secondary btn-lg btn-block">위시리스트에 추가</button>
+          </div>
+          <div class="col-2"></div>
+          <div class="col-5">
+            <p>가격</p>
+          </div>
+        </div>
+        
+        <div class="mt-5 mb-4">
+          <div class="row border-top border-bottom">
+            <div class="col-6 mt-3 mb-3 border-right">
+              <p>가까운 매장을 찾아보세요</p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  매장
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">선택</a>
+                  <a class="dropdown-item" href="#">고양</a>
+                  <a class="dropdown-item" href="#">광명</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 mt-3 mb-3">
+              <p>온라인 구매 가능</p>
+              <p class="text-danger">실시간 재고량은 장바구니에서 확인해주세요</p>
+            </div>
+          </div>
+        </div>
+        <p>실시간 재고상황이 반영되지 않을 수 있어, 정확한 재고량은 매장에서 확인해주세요.</p>
+
+      </div>
+    </div>
+  </div>
+  <h3>상품평 작성하기</h3>
+  <!-- {% load likert_fa_stars %}
+  {{ survey.score2|fa_stars4}}
+  <i class='fa fa-star likert-star'></i> -->
+  <form action="{% url 'products:comment_create' product.pk%}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">작성하기</button>
+  </form>
+  <hr>
+  {% for comment in comments %}
+    {{ comment.score }} : {{ comment.user }} ( {{ comment.created_at }} )
+    <h5>{{ comment.title }}</h5>
+    {{ comment.content }}
+    <hr>
+  {% endfor %}
+
+{% include '_footer.html' %}
+{% endblock %}

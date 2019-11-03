@@ -1,30 +1,75 @@
-<nav style="height:45px;width:100vw;font-size:13px;"
-    class=" p-3 m-0 navbar navbar-expand bg-white border-bottom d-flex justify-content-lg-between">
-    <div class="container ml-1 px-3">
-    <table class="table text-center text-muted align-content-center p-1 m-1">
-            <tr>
-                <td><a class="text-muted" href="#">고객지원</a></td>
-                <td>|</td>
-                <td><a class="text-muted" href="#">매장안내</a></td>
-                <td>|</td>
-                <td><a class="text-primary font-weight-bolder" href="#">IKEA Family</a></td>
-                <td>|</td>
-                <td><a class="text-info" href="#">채팅상담</a></td>
-            </tr>
-            </table>
+{% load static %}
+<link rel="stylesheet" href="{% static 'index/_navbar.css' %}">
+<!-- navbar -->
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-xl navbar-fixed-top navbar-light text-center">
+    <!-- 브랜드 로고 -->
+    <a class="Brandname navbar-brand ml-5" href="#">PAPRIKA</a>
+    <span class="BrandnameSmall mt-3">HOTELS & RESORT</span>
+
+    <!-- 토글 버튼 (햄버거) -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- nav bar -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto mr-5">
+
+        <!-- 메뉴 1 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_1" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴1
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_1">
+            <a class="dropdown-item" href="#">메뉴1-1</a>
+            <a class="dropdown-item" href="#">메뉴1-2</a>
+            <a class="dropdown-item" href="#">메뉴1-3</a>
+          </div>
+        </li>
+
+        <!-- 메뉴 2 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_2" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴2
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_2">
+            <a class="dropdown-item" href="#">메뉴2-1</a>
+          </div>
+        </li>
+
+        <!-- 메뉴 3 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_3" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴3
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_3">
+            <a class="dropdown-item" href="#">메뉴3-1</a>
+          </div>
+        </li>
+
+        <!-- 메뉴 4 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_4" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴4
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_4">
+            <a class="dropdown-item" href="#">메뉴4-1</a>
+          </div>
+        </li>
+
+        <!-- 예약 버튼 -->
+        <li class="nav-item bg-dark px-5">
+          <a href="" class="nav-link text-white">
+            <div>Reservation</div>
+          </a>
+        </li>
     </div>
-    <div class="container-fluid text-muted justify-content-sm-center">
-        안녕하세요. IKEA Korea 입니다.
-    </div>
-    <div class="container m-0 pr-3">
-        <table class="table text-center text-muted align-content-center p-3 m-3">
-            <tr>
-                <td><a class="text-muted" href="#">로그인</a></td>
-                <td>|</td>
-                <td><a class="text-muted" href="#">마이페이지</a></td>
-                <td>|</td>
-                <td><a class="text-muted" href="#">English</a></td>
-            </tr>
-        </table>
-    </div>
-</nav>
+
+  </nav>
+</div>

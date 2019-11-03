@@ -31,8 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'reservations',
+    'products',
     'indexes',
     'payments',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    # 'likert_field', # 별점 필드
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.kakao',
 ]
 
 MIDDLEWARE = [
@@ -123,10 +132,22 @@ USE_TZ = True
 STATIC_URL = '/static/' 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets' )
+    os.path.join(BASE_DIR, 'assets',),
+    os.path.join(BASE_DIR, 'statics',)
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' 
+
+# accounts app
+AUTH_USER_MODEL = 'accounts.User'
+
+AUTHENTICATION_BACKENDS = (
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1  # django.contrib.sites -> SITE_ID 부여
+LOGIN_REDIRECT_URL = 'indexes:index'

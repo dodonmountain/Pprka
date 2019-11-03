@@ -8,7 +8,7 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
+# db.sqlite3  # 프로덕트 넣기 전까지만 포함시키기
 db.sqlite3-journal
 media
 
@@ -183,7 +183,7 @@ ENV/
 env.bak/
 venv.bak/
 pip-selfcheck.json
-
+db.sqlite3
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

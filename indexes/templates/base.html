@@ -1,24 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>IKEA</title>
+  <title>Welcome! Hotel Paprika!</title>
   <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
   {% block css %}{% endblock css %}
+
 </head>
 
 <body>
-  {% include '_navbar.html' %}
 
-  {% block body %}
-  {% endblock %}
 
-<!-- javascript -->
-<script src="https://kit.fontawesome.com/c596c9d4e2.js"></script>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  {% block body %}{% endblock %}
+
+  <!-- javascript -->
+  <script src="https://kit.fontawesome.com/c596c9d4e2.js"></script>
+  <script src="{% static 'bootstrap/js/jquery-3.0.0.slim.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <br>
+  <a href="{% url 'reservations:index' %}">
+      <button>Reservation</button>
+  </a>
+  <hr>
+  {% for product in products %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    <br>
+    <a href="{% url 'products:detail' product.pk %}">{{ product.name }}</a>
+  {% endfor %}
+{% endblock %}
