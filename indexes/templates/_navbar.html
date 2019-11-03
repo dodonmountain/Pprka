@@ -1,0 +1,75 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'index/_navbar.css' %}">
+<!-- navbar -->
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-xl navbar-fixed-top navbar-light text-center">
+    <!-- 브랜드 로고 -->
+    <a class="Brandname navbar-brand ml-5" href="#">PAPRIKA</a>
+    <span class="BrandnameSmall mt-3">HOTELS & RESORT</span>
+
+    <!-- 토글 버튼 (햄버거) -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- nav bar -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto mr-5">
+
+        <!-- 메뉴 1 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_1" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴1
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_1">
+            <a class="dropdown-item" href="#">메뉴1-1</a>
+            <a class="dropdown-item" href="#">메뉴1-2</a>
+            <a class="dropdown-item" href="#">메뉴1-3</a>
+          </div>
+        </li>
+
+        <!-- 메뉴 2 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_2" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴2
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_2">
+            <a class="dropdown-item" href="#">메뉴2-1</a>
+          </div>
+        </li>
+
+        <!-- 메뉴 3 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_3" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴3
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_3">
+            <a class="dropdown-item" href="#">메뉴3-1</a>
+          </div>
+        </li>
+
+        <!-- 메뉴 4 -->
+        <li class="nav-item dropdown px-5">
+          <a class="nav-link dropdown-toggle" href="#" id="nav_d_4" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            메뉴4
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="nav_d_4">
+            <a class="dropdown-item" href="#">메뉴4-1</a>
+          </div>
+        </li>
+
+        <!-- 예약 버튼 -->
+        <li class="nav-item bg-dark px-5">
+          <a href="" class="nav-link text-white">
+            <div>Reservation</div>
+          </a>
+        </li>
+    </div>
+
+  </nav>
+</div>
