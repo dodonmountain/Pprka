@@ -67,12 +67,12 @@
             <div class="card-body" >
               <div id="formDiv" class="row" style="position:absolute; z-index:-1;">
                 <div class="col-6 ">
-                  <form action="" method="POST">
+                  {% if user.authenticated %}
+                  <form action="{% url 'reservations:index' %}" method="POST">
+                  {% else %}
+                  <form action="{% url 'reservations: non_member' %}" method="POST">
+                  {% endif %}
                     {% csrf_token %}
-                    <input type="date" name="checkin" class="form-control">
-                    <input type="date" name="checkout" class=" form-control">
-                    <input type="number" name="adults" class=" form-control" placeholder="Adult">
-                    <input type="number" name="kids" class=" form-control" placeholder="Kid">
                     <button type="submit" class="btn btn-dark">예약!</button>
                   </form>
                 </div>
