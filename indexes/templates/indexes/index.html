@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block css %}
+<style>
+body {
+    height:5000px;
+}
+</style>
 <link rel="stylesheet" href="{% static 'index/_index.css' %}">
 {% endblock css %}
 {% block body %}
@@ -29,6 +34,8 @@
     </div>
 </div>
 {% include '_searchRes.html' %}
-
-
+<div style="height:750px" class="container text-center border">
+    <h1>NEXT SECTION</h1>
+</div>
+{% include '_footer.html' %}
 {% endblock %}

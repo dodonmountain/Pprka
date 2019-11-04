@@ -1,28 +1,42 @@
-
-
-@media (min-width: 992px) {
+.navbox {
+    background-image: url("palmhotel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 78vh;
+}
+.oneliner {
+    font-size: 4rem;
+    color: #fafafa;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(0, 0, 0, 0.3);
+    max-width: fit-content;
+}
+@media (max-width:1214px){
     .oneliner {
-        font-size: 4rem;
+        font-size: 2.3rem;
         color: #fafafa;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         background-color: rgba(0, 0, 0, 0.3);
         max-width: fit-content;
-    }
-    .navbox {
-        background-image: url("palmhotel.jpg");
-        height: 78vh;
+    
     }
 }
-@media (max-width: 992px) {
+@media (max-width:992px){
     .oneliner {
-        font-size: 0;
+        font-size: 0rem;
+        color: #fafafa;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: transparent;
+        max-width: fit-content;
     }
     .navbox {
-        background-color: darkkhaki;
+        background-color: darkseagreen;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: fit-content;
     }
 }
-
-
 .search-sec {
     padding: 1rem;
 }
@@ -60,7 +74,7 @@
 
 @media (max-width: 992px) {
     .search-sec {
-        background: #1A4668;
+        background: #55595c;
         top: -120px;
     }
 }

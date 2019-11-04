@@ -1,0 +1,11 @@
+footer {
+    position: absolute;
+    top: 4900px;
+    width: 100vw;
+}
+
+footer > div{
+    height: 100px;
+}
+
+
