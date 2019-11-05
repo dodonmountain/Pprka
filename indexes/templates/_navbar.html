@@ -1,5 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'index/_navbar.css' %}">
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v5.0">
+</script>
 <!-- navbar -->
 <div class="container-fluid">
   <nav class="navbar navbar-expand-xl navbar-fixed-top navbar-light text-center">
@@ -53,23 +55,78 @@
         </li>
 
         <!-- 메뉴 4 -->
-        <li class="nav-item dropdown px-5">
-          <a class="nav-link dropdown-toggle" href="#" id="nav_d_4" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            메뉴4
-          </a>
-          <div class="dropdown-menu text-center" aria-labelledby="nav_d_4">
-            <a class="dropdown-item" href="#">메뉴4-1</a>
-          </div>
+        <li class="nav-item px-5">
+          <button type="nav-btn button" class="btn btn-outline-dark" data-toggle="modal" data-target="#loginModal">
+            로그인
+          </button>
         </li>
 
-        <!-- 예약 버튼 -->
-        <li class="nav-item bg-dark px-5">
-          <a href="{% url 'reservations:index'%}" class="nav-link text-white">
-            <div>Reservation</div>
-          </a>
-        </li>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header bg-light">
+                <h5 class="modal-title text-dark" id="loginModalTitle">PAPRIKA</h5>
+                <p class="small text-muted">Hotel & Resort</p>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4 class="small">고객님의 Email 주소와 비밀번호를 입력하여 주십시오.</h4>
+                <h4 class="small mb-4 text-muted">Please enter your email address and password.</h4>
+                <div class="container">
+                  <form action="" method="post">
+
+                    <!-- email 입력 -->
+
+                    <div class="input-group mb-1">
+                      <input type="email" class="form-control" placeholder="email을 입력해주세요" aria-label="username">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">아이디 찾기</button>
+                      </div>
+                    </div>
+
+                    <!-- rememberEmail-->
+
+                    <div class="input-group mb-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberEmail">
+                            <label class="custom-control-label small text-muted" for="rememberEmail">이메일 주소 저장</label>
+                          </div>
+                    </div>
+
+
+                    <!-- password 입력 -->
+
+                    <div class="input-group mb-3">
+                      <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" aria-label="password"">
+                      <div class=" input-group-append">
+                      <button class="btn btn-outline-secondary" type="button">비밀번호 찾기</button>
+                    </div>
+
+
+                </div>
+
+
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark">로그인</button>
+              <button type="button" class="btn btn-outline-dark" data-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
     </div>
 
-  </nav>
+    <!-- 예약 버튼 -->
+    <li class="nav-item bg-dark px-5">
+      <a href="#" class="nav-link text-white">
+        <div>Reservation</div>
+      </a>
+    </li>
+</div>
+
+</nav>
 </div>
