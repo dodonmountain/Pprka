@@ -81,7 +81,7 @@
                     <!-- email 입력 -->
 
                     <div class="input-group mb-1">
-                      <input type="email" class="form-control" placeholder="email을 입력해주세요" aria-label="username">
+                      <input type="email" class="form-control" id="userEmail" placeholder="email을 입력해주세요" aria-label="username">
                       <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button">아이디 찾기</button>
                       </div>
@@ -100,7 +100,7 @@
                     <!-- password 입력 -->
 
                     <div class="input-group mb-3">
-                      <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" aria-label="password"">
+                      <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요" aria-label="password">
                       <div class=" input-group-append">
                       <button class="btn btn-outline-secondary" type="button">비밀번호 찾기</button>
                     </div>
@@ -130,3 +130,35 @@
 
 </nav>
 </div>
+<script>
+window.onload=function(){
+    const userEmail = document.getElementById('#userEmail')
+    const isRememberEmail = document.getElementById('#remeberEmail')
+    isRememberEmail.addEventListener("click", function (e) {
+        console.log(e)
+    })
+}
+
+
+function setCookie(cookie_name, value, days) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + days);
+
+    var cookie_value = escape(value) + ((days == null) ? '' : ';    expires=' + exdate.toUTCString());
+    document.cookie = cookie_name + '=' + cookie_value;
+}
+
+
+function getCookie(cookie_name) {
+    var x, y;
+    var val = document.cookie.split(';');
+    for (var i = 0; i < val.length; i++) {
+        x = val[i].substr(0, val[i].indexOf('=')); // substr(시작인덱스, 끝 인덱스)
+        y = val[i].substr(val[i].indexOf('=') + 1);
+        x = x.replace(/^\s+|\s+$/g, ''); // strip()
+        if (x == cookie_name) {
+            return unescape(y); // unescape로 디코딩 후 값 리턴
+        }
+    }
+}
+</script>
